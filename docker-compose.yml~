@@ -4,7 +4,7 @@ services:
 
   db:
     build: db
-    image: docker.io/k8s-wordsmith-db-pivotal
+    image: dockersamples/k8s-wordsmith-db
 
   words:
     build: words
@@ -14,6 +14,6 @@ services:
 
   web:
     build: web
-    image: docker.io/k8s-wordsmith-web-pivotal
+    image: dockersamples/k8s-wordsmith-web
     ports:
      - "8080:80"

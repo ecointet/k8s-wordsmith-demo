@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: docker.io/ecointet/k8s-wordsmith-db-pivotal
+        image: dockersamples/k8s-wordsmith-db-pivotal
         ports:
         - containerPort: 5432
           name: db
@@ -96,7 +96,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: docker.io/ecointet/k8s-wordsmith-web-pivotal
+        image: dockersamples/k8s-wordsmith-web-pivotal
         ports:
         - containerPort: 80
           name: words-web
