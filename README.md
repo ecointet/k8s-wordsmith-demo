@@ -33,6 +33,13 @@ image: dockersample/k8s-wordsmith-web
 
 ## Deploy Using a Kubernetes Manifest
 
+Clone this repo :
+
+```
+git clone https://github.com/ecointet/k8s-wordsmith-demo
+cd k8s-wordsmith-demo/
+```
+
 Apply the manifest using `kubectl`:
 
 ```
@@ -47,11 +54,25 @@ kubectl get services
 
 Now browse to `http://IP-LOAD-BALANCER:8081`.
 
+## The full story with Pivotal PKS
+Before the previous commands, please login to PKS `kubectl`:
+
+```
+pks login -a <PKS API> -u <PKS USER> -p <PKS PASSWORD> -k
+```
+```
+pks get-credentials <CLUSTER NAME>
+```
+```
+kubectl cluster-info
+```
+
 ##  Edit your own Words
 
 If you want to set new words, you can edit `db/words.sql`:
 
 ```
+cd db
 docker build -t <YOUR-REPO>/<NEW-DOCKER-IMAGE> .
 docker push <YOUR-REPO>/<NEW-DOCKER-IMAGE>
 ```
